@@ -1,0 +1,10 @@
+<div class="add-task">
+  <mat-form-field class="example-full-width" appearance="standard">
+    <mat-label>To do</mat-label>
+    <input matInput placeholder="Ex. bodybuilding" [(ngModel)]="newTask">
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="submit-button" (click)="addTask()">Add Task</button>
+</div>
+<div class="tasks" *ngFor="let task of tasks">
+  <mat-checkbox [ngClass]="task.isCompleted ? 'completed' : 'not-completed'" [(ngModel)]="task.isCompleted">{{ task.name }}</mat-checkbox>
+</div>
